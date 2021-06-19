@@ -123,7 +123,7 @@ def normalize(im,mode=1):
 
 
 def remove(file_path):
-	if os.path.exists(file_path):  # 如果文件存在
+	if os.path.exists(file_path): 
 		os.remove(file_path)
 	else:
 		pass
@@ -137,7 +137,6 @@ def standandzation(image):
 
 def softmax(x):
     x_exp = np.exp(x)
-    #如果是列向量，则axis=0
     x_sum = np.sum(x_exp, axis = -1, keepdims = True)
     s = x_exp / x_sum    
     return s

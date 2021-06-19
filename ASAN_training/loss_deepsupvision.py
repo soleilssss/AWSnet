@@ -64,7 +64,7 @@ class MultiDiceLoss(nn.Module):
 			totalLoss += diceLoss
 		return totalLoss
 
-#四种loss的加权求和
+#Weighted summation of four losses
 class LossPRSnet_dicece:
 	def __init__(self,num_classes=2,weights=[0.125,0.25,0.5,1,0.2,1]):
 
@@ -90,8 +90,8 @@ class LossPRSnet_dicece:
 		criterion = self.weights[0] * ce_dc_loss0 + self.weights[1] * ce_dc_loss1 + self.weights[2] * ce_dc_loss2 + self.weights[3] * ce_dc_loss3
 		return criterion
 
-#评估指标dice
-#计算每一类的dice
+#Evaluation index dice
+#Calculate the dice of each category
 class Dice(nn.Module):
 	def __init__(self):
 		super(Dice, self).__init__()
@@ -106,7 +106,7 @@ class Dice(nn.Module):
 		loss = loss.sum() / N
 		return loss
 
-#测试输出每一类的dice
+#Test output for each type of dice
 class MulticlassDice(nn.Module):
 	"""
 	requires one hot encoded target. Applies DiceLoss on each class iteratively.

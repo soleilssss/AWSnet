@@ -24,7 +24,7 @@ class Mixedpath(nn.Module):
         self.n_choices = n_choices
         self.AP_path_alpha = Parameter(torch.Tensor(self.n_choices))
     def probs_over_ops(self):
-        probs = F.softmax(self.AP_path_alpha, dim=0)  # softmax to probability  是利用softmax把alpha变成概率
+        probs = F.softmax(self.AP_path_alpha, dim=0)  # softmax to probability 
         return probs
 
 #Set gpu
@@ -46,7 +46,7 @@ mix1 = Mixedpath(n_choices).to(device)
 mix2 = Mixedpath(n_choices).to(device)
 mix3 = Mixedpath(n_choices).to(device)
 mix4 = Mixedpath(n_choices).to(device)
-sample_num = 10 #采样次数
+sample_num = 10 #Sampling times
 baseline = None
 baseline_decay_weight = 0.99
 init_type = 'normal'   #Used for initialization
@@ -103,17 +103,17 @@ normalval_transforms = transforms.Compose([
     transforms.ToTensor(),        
     transforms.Normalize((0.5,), (0.5,))
 ])
-train_dataset = LiverDataset(args.train_datapath,transform=img_transforms,target_transform=img_transforms,normalization=normal_transforms)    # 这是训练集
-print('训练集长度:', len(train_dataset))
+train_dataset = LiverDataset(args.train_datapath,transform=img_transforms,target_transform=img_transforms,normalization=normal_transforms) 
+print('Training set length:', len(train_dataset))
 train_dataloaders = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0)
-val_dataset = LiverDataset(args.val_datapath, transform=None,target_transform=None,normalization=normalval_transforms)       # 这是验证集
-print('验证集长度:', len(val_dataset))
+val_dataset = LiverDataset(args.val_datapath, transform=None,target_transform=None,normalization=normalval_transforms) 
+print('Validation set length:', len(val_dataset))
 val_dataloaders = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_workers=0)
 
 #Generate folder and copy py file
-result_path = '{}-{}'.format('EXP', time.strftime("%Y%m%d-%H%M%S")) #时间EXP-20200915-175950
+result_path = '{}-{}'.format('EXP', time.strftime("%Y%m%d-%H%M%S")) 
 check_dir(result_path)
-log_format = '%(asctime)s %(message)s'  #打印日志时间和信息
+log_format = '%(asctime)s %(message)s' 
 logging.basicConfig(stream = sys.stdout, level = logging.INFO,
     format = log_format, datefmt='%m/%d %I:%M:%S %p')
 fh = logging.FileHandler(os.path.join(result_path, 'log.txt'))
@@ -318,4 +318,4 @@ for epoch in range(50):
 
 torch.cuda.synchronize()
 end = time.time()
-print('训练时间为：', end-start,'秒')
+print('Training Time：', end-start,'s')
