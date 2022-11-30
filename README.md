@@ -1,6 +1,8 @@
 ## AWSnet
 This is the code that was used for our participation in 2020's MyoPS Challenge. 
 
+The code is in the master branch.
+
 The challenge website is available here:
 http://www.sdspeople.fudan.edu.cn/zhuangxiahai/0/myops20/
 
