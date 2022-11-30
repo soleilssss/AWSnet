@@ -1,4 +1,6 @@
 ## AWSnet
+Our paper "***" has been accepted by MedIA, link：https://www.sciencedirect.com/science/article/pii/S1361841522000159
+
 This is the code that was used for our participation in 2020's MyoPS Challenge. 
 
 The code is in the master branch.
