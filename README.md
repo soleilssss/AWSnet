@@ -1,5 +1,5 @@
 ## AWSnet
-Our paper "***" has been accepted by MedIA, link：https://www.sciencedirect.com/science/article/pii/S1361841522000159
+Our paper has been accepted by MedIA, link：https://www.sciencedirect.com/science/article/pii/S1361841522000159
 
 This is the code that was used for our participation in 2020's MyoPS Challenge. 
 
@@ -29,7 +29,7 @@ init_weight: File to which you stored the initial weight
 First go into the `pure_training` and adapt all the paths to match your file system and the download locations of training and test sets.
 Then python pure_training.py to train your dataset.
 
-# Citation
+## Citation
 
 If you find the code useful for your research, please cite our paper.
 
