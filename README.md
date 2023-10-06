@@ -28,3 +28,9 @@ init_weight: File to which you stored the initial weight
 
 First go into the `pure_training` and adapt all the paths to match your file system and the download locations of training and test sets.
 Then python pure_training.py to train your dataset.
+
+# Citation
+
+If you find the code useful for your research, please cite our paper.
+
+Wang, Kai-Ni, et al. "AWSnet: an auto-weighted supervision attention network for myocardial scar and edema segmentation in multi-sequence cardiac magnetic resonance images." Medical Image Analysis 77 (2022): 102362.
